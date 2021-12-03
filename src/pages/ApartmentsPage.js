@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function ApartmentsPage() {
+
   const [apartments, setApartments] = useState([]);
 
   // This effect will run only once after the initial render 
@@ -11,7 +12,8 @@ function ApartmentsPage() {
       .then((response) => {
         console.log("response.data", response.data);
         setApartments(response.data);
-      });
+      })
+      .catch(console.log);
   }, []);       // <--  [] means: Run the effect only once, after initial render
 
 
